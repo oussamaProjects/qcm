@@ -65,27 +65,24 @@
                             }
 
                             $nbr2 = count($matiere->niveaux) ;
-                            $porcentage = $nbr1*100/$nbr2;
+                            $porcentage = $nbr1*100/$nbr2??1;
 
                             echo '<div class="progress">';
+
                                 echo '<div class="progress-bar bg-info" role="progressbar"
                                     style="width:'.$porcentage.'%" aria-valuenow="25" aria-valuemin="0"
                                     aria-valuemax="100">'.number_format($porcentage, 2, '.', '').'%</div>';
+                                    
                                 echo '</div>';
 
-                            echo '<div class="blog-by">
-                                <p>'.$matiere->description.'</p>
-                                <p> <span class="text-success"> <i class="ion-android-person"></i> Enseignant</span>
-                                    '.$matiere->enseignant->nom.' '.$matiere->enseignant->prenom.'</p>
-                                <p>Les classes : <code>';
-                                foreach($matiere->classes as $classe)
-                                {
-                                    echo '<span class="badge badge-primary">'.$classe->nom.'</span>  ' ;
-                                }
+                            echo '<div class="blog-by">';
+                                // foreach($matiere->classes as $classe)
+                                // {
+                                //     echo '<span class="badge badge-primary">'.$classe->nom.'</span>  ' ;
+                                // }
                                 echo '</code></p>
                                 <div class="pt-10">
-                                    <a href="get_niveau/'.$matiere->id.'" class="btn btn-outline-primary">Voir
-                                        Niveaux</a>
+                                    <a href="get_niveau/'.$matiere->id.'" class="btn btn-outline-primary">Voir Niveaux</a>
                                 </div>
                             </div>
                         </div>
@@ -97,8 +94,68 @@
         </ul>
     </div>
 </div>
+
+{{-- <div class="product-wrap">
+    <div class="blog-list">
+        <ul>
+            @php
+            if(count($etudiant_matiere) > 0){
+            foreach($etudiant_matiere as $matiere)
+            { echo '<li>
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="blog-img">
+                            <img src="/storage/image/'.$matiere->photo.'" alt="" class="bg_img">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="blog-caption">
+                            <h4><a href="#">Matiére : <span class="text-blue"> '.$matiere->nom.'</span></a></h4>';
+
+                            $nbr1 = 0 ;
+                            for($i=0 ; $i<count($matiere->niveaux) ;$i++){
+                                foreach ($resultat_niveaux as $res) {
+                                    if($res->niveau_id == $matiere->niveaux[$i]->id){
+                                        $nbr1++;
+                                    }
+                                }
+                            }
+
+                            $nbr2 = count($matiere->niveaux) ;
+                            $porcentage = $nbr1*100/$nbr2;
+
+                            echo '<div class="progress">';
+
+                                echo '<div class="progress-bar bg-info" role="progressbar"
+                                    style="width:'.$porcentage.'%" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100">'.number_format($porcentage, 2, '.', '').'%</div>';
+                                    
+                                echo '</div>';
+
+                            echo '<div class="blog-by">
+                                <p>'.$matiere->description.'</p>
+                                <p> <span class="text-success"> <i class="ion-android-person"></i> Enseignant</span>'.$matiere->enseignant->nom.' '.$matiere->enseignant->prenom.'</p>
+                                <p>Les classes : <code>';
+                                // foreach($matiere->classes as $classe)
+                                // {
+                                //     echo '<span class="badge badge-primary">'.$classe->nom.'</span>  ' ;
+                                // }
+                                echo '</code></p>
+                                <div class="pt-10">
+                                    <a href="get_niveau/'.$matiere->id.'" class="btn btn-outline-primary">Voir Niveaux</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>';
+            }}
+            @endphp
+        </ul>
+    </div>
+</div> --}}
 @section('script')
-<script>
+ <script> 
     calcul_pourcentage(matiere){
 
         return porcentage ;

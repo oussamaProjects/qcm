@@ -229,7 +229,7 @@ class QuestionController extends Controller
                 $resultat->etudiant_id = $user->id;
                 $resultat->save();
                 $res = Resultat_question::find($resultat->id);
-                $score = 0;
+                $score = -1;
                 if (($res->reponse1 === $question->reponse1)
                     && ($res->reponse2 === $question->reponse2)
                     && ($res->reponse3 === $question->reponse3)

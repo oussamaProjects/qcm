@@ -76,7 +76,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <img width="150px" src="{{ public_path('vendors/images/quiz.png') }}" alt="" srcset="">
+                        {{-- <img width="150px" src="{{ public_path('vendors/images/quiz.png') }}" alt="" srcset=""> --}}
                         <br><br>
                         <span class="title1">Certificat d'achèvement</span>
                         <br>

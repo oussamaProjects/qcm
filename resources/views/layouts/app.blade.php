@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('vendors/styles/style.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/survey-jquery/1.9.42/survey.css" integrity="sha512-su0eA5Vs3NAM20QUkdS/gwA4zxyxWbasDXkc3UO/zsprxW+2p2f1fe6zrHVTSUcEnB/qt8cX18rHraqeyYeOkg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @yield('head')
 </head>
 
@@ -73,11 +73,11 @@
         <div class="brand-logo">
             @if(Auth::user()->role === '1')
             <a href="/enseignant">
-                <img src="{{ asset('vendors/images/quiz.png') }}" alt="">
+                {{-- <img src="{{ asset('vendors/images/quiz.png') }}" alt=""> --}}
             </a>
             @elseif(Auth::user()->role === '2')
             <a href="/matiere">
-                <img src="{{ asset('vendors/images/quiz.png') }}" alt="">
+                {{-- <img src="{{ asset('vendors/images/quiz.png') }}" alt=""> --}}
             </a>
             @endif
         </div>
@@ -112,9 +112,9 @@
                             <li><a href="/etudiant/create">Ajouter Etudiant</a></li>
                         </ul>
                     </li>
-                </ul>
-                @elseif(Auth::user()->role === '2')
-                <ul id="accordion-menu">
+                {{-- </ul> --}}
+                {{-- @elseif(Auth::user()->role === '2') --}}
+                {{-- <ul id="accordion-menu"> --}}
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle">
                             <span class="fa fa-book"></span><span class="mtext">Matières</span>
@@ -156,9 +156,9 @@
                 @yield('content')
 
                 <!-- Debut Footer -->
-                <div class="footer-wrap bg-white pd-20 mb-20 border-radius-5 box-shadow">
+                {{-- <div class="footer-wrap bg-white pd-20 mb-20 border-radius-5 box-shadow">
                     App Quiz - Application de quiz
-                </div>
+                </div> --}}
                 <!-- Fin Sidebar -->
             </div>
         </div>

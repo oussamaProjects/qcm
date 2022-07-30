@@ -160,7 +160,8 @@
 </script> --}}
 
 <script src="https://unpkg.com/jquery"></script>
-<script src="https://surveyjs.azureedge.net/1.7.26/survey.jquery.js"></script>
+{{-- <script src="https://surveyjs.azureedge.net/1.7.26/survey.jquery.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/survey-jquery/1.9.42/survey.jquery.min.js" integrity="sha512-+fvz6QFYbBBbg8xC7lpwYNDBRdeSu0iYZIzpcanNEgjW5qyfiY6LTEXsAsMbMEiSpGkf2pMQQdJa1KAJBQIERw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     Survey
     .StylesManager
@@ -217,7 +218,8 @@ var json = {
             questions: [
                 {
                     type: "html",
-                    html: "Vous êtes sur le point de commencer le quiz.<br>Vous disposez de "+duree+" mn .<br>Veuillez cliquer sur le bouton «Démarrer le quiz» lorsque vous êtes prêt."
+                    html: "Veuillez cliquer sur le bouton «Démarrer le quiz» lorsque vous êtes prêt."
+                    // html: "Vous êtes sur le point de commencer le quiz.<br>Vous disposez de "+duree+" mn .<br>Veuillez cliquer sur le bouton «Démarrer le quiz» lorsque vous êtes prêt."
                 }
             ]
         },

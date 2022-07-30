@@ -56,8 +56,7 @@
         </div> --}}
         <div class="brand-logo">
             <a href="/matiere_etudiant" id="l">
-                <img src="{{ asset('vendors/images/quiz.png') }}" alt="" id="im"
-                style="opacity='100%'">
+                {{-- <img src="{{ asset('vendors/images/quiz.png') }}" alt="" id="im" style="opacity='100%'"> --}}
             </a>
         </div>
 
@@ -168,9 +167,9 @@
                 @yield('content')
                 <br><br><br>
                 <!-- Debut Footer -->
-                <div class="footer-wrap bg-white pd-20 mb-20 border-radius-5 box-shadow">
+                {{-- <div class="footer-wrap bg-white pd-20 mb-20 border-radius-5 box-shadow">
                     App Quiz - Application de quiz
-                </div>
+                </div> --}}
                 <!-- Fin Sidebar -->
             </div>
         </div>
